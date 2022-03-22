@@ -4,8 +4,6 @@ on:
   push:
     branches: 
       - master
-  pull_request:
-    branches: [ master ]
 
 jobs:
 
@@ -20,7 +18,7 @@ jobs:
       run: docker build -t dashmeet/docker-react -f Dockerfile.dev .
           
     - name: Test Docker image
-      run: docker run dashmeet/docker-react npm test -- --coverage
+      run: docker run dashmeet/docker-react npm run test -- --coverage
       
     - name: Generate deployment package
       run: zip -r deploy.zip . -x '*.git*'
