@@ -32,6 +32,7 @@ jobs:
         environment_name: Beanstalkdocker-env
         existing_bucket_name: elasticbeanstalk-us-west-1-251672825063
         region: us-west-1
+        version_label: ${{ github.sha }}
         deployment_package: deploy.zip
 
 
